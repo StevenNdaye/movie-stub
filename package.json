@@ -20,6 +20,8 @@
   },
   "homepage": "https://github.com/StevenNdaye/movie-stub",
   "devDependencies": {
-    "express": "^4.9.5"
+    "express": "^4.9.5",
+    "body-parser": "*",
+    "morgan": "*",
   }
 }
