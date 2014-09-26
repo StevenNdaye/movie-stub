@@ -1,0 +1,20 @@
+{
+  "name": "movieStub",
+  "version": "0.0.1",
+  "homepage": "https://github.com/StevenNdaye/movie-stub",
+  "authors": [
+    "StevenNdaye <stevenndaye@gmail.com>"
+  ],
+  "description": "Movie Stub Online Ticket",
+  "keywords": [
+    "AngularJS"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

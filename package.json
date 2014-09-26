@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/StevenNdaye/movie-stub/issues"
   },
-  "homepage": "https://github.com/StevenNdaye/movie-stub"
+  "homepage": "https://github.com/StevenNdaye/movie-stub",
+  "devDependencies": {
+    "express": "^4.9.5"
+  }
 }
