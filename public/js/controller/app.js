@@ -1,4 +1,4 @@
-var movieStubApp = angular.module('movieStubApp', []);
+var movieStubApp = angular.module('movieStubApp', ['ngRoute']);
 
 movieStubApp.controller('movieStubController', function($scope){
   $scope.movies = [
@@ -38,4 +38,13 @@ movieStubApp.controller('movieStubController', function($scope){
       }
     };
   };
+
+  $scope.headerSrc = "tmpl/header.html";
+  $scope.back = function(){
+    window.history.back();
+  };  
+});
+
+movieStubApp.controller("movieDetailsController", function($scope, $routeParams){
+  $scope.getMovieById($routeParams.id);
 });
