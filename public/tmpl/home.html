@@ -10,7 +10,7 @@
       <p>
         <span class = "label label-warning availability">Availability ({{movie.availability}})</span>
         <a ng-href="#/movie/{{movie.id}}" class = "btn btn-primary">Review</a>
-        <a href="#" class = "btn btn-success" role = "button">Book &#62;&#62;</a>
+        <a href="#/bookTickets/{{movie.id}}" class = "btn btn-success" role = "button" ng-availability = "movie.availability == 0">Book &#62;&#62;</a>
       </p>
     </div>
   </div> 

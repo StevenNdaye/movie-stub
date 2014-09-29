@@ -25,3 +25,26 @@ movieStubApp.controller('movieStubController', function($scope, movieStubFactory
 movieStubApp.controller("movieDetailsController", function($scope, $routeParams){
   $scope.getMovieById($routeParams.id);
 });
+
+movieStubApp.controller("bookTicketsController", function($scope, $routeParams, $location, $http){
+  $scope.getMovieById($routeParams.id);
+  $scope.onlyNumbers = /^\d+$/;
+  $scope.formData = {};
+  $scope.formData.movie_id = $scope.currMovie.id;
+  $scope.formData.movie_name = $scope.currMovie.name;
+  $scope.formData.date = "Today";
+
+  $scope.processForm = function(){
+    $http({
+      method: 'POST',
+      url: '/book',
+      data: $.param($scope.formData),
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+      }
+    }).success(function(data){
+      console.log(data);
+    });
+  };
+
+});
