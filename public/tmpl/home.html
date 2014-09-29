@@ -1,16 +1,17 @@
-<div class="row">
-  <div class="col-xs-3"><h4>Tickets available for :</h4></div>
-  <div class="col-xs-3">
-    <input class = "form-control" type = "text" placeholder = "Search a movie" ng-model = "search">
-  </div>
+<h2>Book a Movie Ticket</h2>
+<input class = "form-control" type = "text" placeholder = "Search a movie" ng-model = "search">
+
+<div class = "">
+  <div class="row movies-list">
+    <div class="col-md-4" ng-repeat = "movie in movies | orderBy : 'name' : true | filter : search">
+      <h2>{{movie.name | uppercase}}</h2>
+      <p><img ng-src="{{movie.thumb}}" class = "thumb-big"></p>
+      <p>{{movie.review | limitTo:99}}...</p>
+      <p>
+        <span class = "label label-warning availability">Availability ({{movie.availability}})</span>
+        <a ng-href="#/movie/{{movie.id}}" class = "btn btn-primary">Review</a>
+        <a href="#" class = "btn btn-success" role = "button">Book &#62;&#62;</a>
+      </p>
+    </div>
+  </div> 
 </div>
-<br/>
-<ul>
-  <li ng-repeat = "movie in movies | orderBy:'name':true | filter : search">
-    {{movie.id}} - {{movie.name | uppercase}} - {{movie.rating}}
-    <a href="javascript:" ng-click = "getMovieById(movie.id)">Availability</a>
-    <a ng-href="#/movie/{{movie.id}} " class="btn btn-primary ">Review</a>
-  </li>
-</ul>
-<br/>
-<label ng-show = "currMovie">Availability for {{currMovie.name}} is {{currMovie.availability}}</label>
