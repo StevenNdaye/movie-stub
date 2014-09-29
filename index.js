@@ -34,5 +34,9 @@ app.post('/book', function(request, response){
   response.json(bookings);
 });
 
+app.get('/bookings', function(request, response) {
+  response.json(bookings);
+});
+
 app.listen(port);
 console.log('Express running at http://localhost:' + port);
