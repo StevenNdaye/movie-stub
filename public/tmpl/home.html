@@ -9,6 +9,7 @@
   <li ng-repeat = "movie in movies | orderBy:'name':true | filter : search">
     {{movie.id}} - {{movie.name | uppercase}} - {{movie.rating}}
     <a href="javascript:" ng-click = "getMovieById(movie.id)">Availability</a>
+    <a ng-href="#/movie/{{movie.id}} " class="btn btn-primary ">Review</a>
   </li>
 </ul>
 <br/>
