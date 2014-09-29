@@ -17,5 +17,10 @@ app.get('/', function(request, response){
   response.render('public/index.html');
 });
 
+app.get('/movies', function(request, response){
+  var movies = require('./data/movies.json');
+  response.json(movies);
+});
+
 app.listen(port);
 console.log('Express running at http://localhost:' + port);
